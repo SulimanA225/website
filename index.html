@@ -7,6 +7,26 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+<script language="JavaScript"> 
+var i = 0; var path = new Array(); 
+
+// LIST OF IMAGES 
+path[0] = "images/heatonpark2.jpg"; 
+path[1] = "images/prestwitchforest2.jpg"; 
+path[2] = "images/phillipspark2.jpg"; 
+
+function swapImage() 
+{ 
+document.slide.src = path[i]; 
+if(i < path.length - 1) i++; 
+else i = 0; 
+setTimeout("swapImage()",3000); 
+} 
+window.onload=swapImage; 
+</script> 
+	
+	
 <style>
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
@@ -52,7 +72,12 @@ body {font-family: "Lato", sans-serif}
 
   <!-- A -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-      <img src="images/fletchermosspark.jpg" alt="Sex Pistols band image" height="474"> 
+	  
+	  
+      <img height="100%" name="slide" src="heatonpark2.jpg" width="100%" />
+
+	  
+	  
     <h2 class="w3-wide"> Green Is The New Black</h2>
 	  <h2 class="w3-wide">&nbsp;</h2>
 <p class="w3-opacity"><i>Being Outdoors Is Amazing&nbsp;</i></p>
@@ -84,18 +109,18 @@ body {font-family: "Lato", sans-serif}
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
     <h2 class="w3-wide w3-center">CONTACT</h2>
 	  <h3>Contact Us!</h3>
-	  <form>
+	  <form action="/action_page.php" method="post">
 		  <label for="fname">First name:</label><br>
-		  <input type="text" id="fname" name="fname"><br>
+		  <input type="text" id="fname" name="fname" required><br>
 		  
 		  <label for="lname">Last name:</label><br>
-		  <input type="text" id="lname" name="lname"><br>
+		  <input type="text" id="lname" name="lname" required><br>
 		  
 		  <label for="email">Your email:</label><br>
-		  <input type="text" id="email" name="email"><br>
+		  <input type="text" id="email" name="email" required><br>
 		  
 		  <label for="message">Message:</label><br>
-		  <textarea type="text" id="message" name="message" rows="7" cols="30"></textarea><br>
+		  <textarea type="text" id="message" name="message" required rows="7" cols="30"></textarea><br>
 		  <br>
 		  
 		  <input type="submit" value="Send">
